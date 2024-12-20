@@ -1,0 +1,25 @@
+# Pixel-manipilation-for-image-Encryption
+Importance of Image Encryption and Decryption in Cyber-Security
+Image encryption and decryption play a vital role in protecting visual data from unauthorized access, tampering, and exploitation. With the increasing use of images in various applications, including medical imaging, surveillance, and social media, the need for secure image transmission and storage has become more pressing.
+
+Reasons for Image Encryption
+1. Confidentiality: Protect sensitive visual data from unauthorized access.
+2. Authenticity: Verify the integrity and authenticity of images.
+3. Data Protection: Prevent image tampering, alteration, or exploitation.
+
+How Image Encryption and Decryption Help
+1. Secure Transmission: Encrypt images before transmitting them over insecure channels.
+2. Secure Storage: Store encrypted images to prevent unauthorized access.
+3. Image Integrity: Decrypt images to verify their integrity and authenticity.
+
+# Relating to the Project
+My project on image encryption and decryption in my GitHub repository demonstrates a practical implementation of these concepts. By providing a secure way to encrypt and decrypt images, my project contributes to the protection of visual data in various applications.
+
+Features and Benefits
+1. Secure Image Encryption: Protect sensitive images from unauthorized access.
+2. Efficient Decryption: Decrypt images efficiently while maintaining their integrity.
+3. Code Availability: Sharing my project with others, will help in promoting collaboration and further development.
+
+Usage and Applications
+1. Medical Imaging: Securely transmit and store medical images, protecting patient confidentiality.
+2. Surveillance: Encrypt surveillance images to prevent unauthorized access and 
