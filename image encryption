@@ -1,0 +1,61 @@
+from PIL import Image
+import numpy as np
+import os
+
+def encrypt_image(pixels, key):
+#Encrypting image pixels by adding a key.
+    return np.mod(pixels.astype(np.int32) + key, 256).astype(np.uint8)
+
+def decrypt_image(pixels, key):
+#Decrypting image pixels by subtracting the key.
+    return np.mod(pixels.astype(np.int32) - key, 256).astype(np.uint8)
+
+def main():
+    input_path = "/Users/Administrator/python_practice/culture.jpg"
+    encrypted_path = "encrypted.jpg"
+    decrypted_path = "decrypted.jpg"
+#loading the image
+    img = Image.open(input_path).convert("RGB")
+    pixels = np.array(img)    
+# user input
+    while True:
+        try:
+            key = int(input("Enter encryption/decryption key (0-255): "))
+            if 0 <= key <= 255:
+                break
+            else:
+                print("Key must be in the range 0-255.")
+        except ValueError:
+            print("Please enter a valid integer.")
+    
+    choice = input("Encrypt (E) or Decrypt (D)? ").upper()
+
+    if choice == "E":
+ # Encrypt the image
+        encrypted_pixels = encrypt_image(pixels, key)
+        encrypted_img = Image.fromarray(encrypted_pixels.astype('uint8'))
+        encrypted_img.save(encrypted_path)
+        print(f"Encrypted image saved as {encrypted_path}")
+
+    elif choice == "D":
+        if not os.path.exists(encrypted_path):
+            print("No encrypted file found.please encrypt an image first.")
+            return
+# Decrypt the image
+        encrypted_img = Image.open(encrypted_path).convert("RGB")
+        encrypted_pixels = np.array(encrypted_img)
+        decrypted_pixels = decrypt_image(encrypted_pixels, key)
+        decrypted_img = Image.fromarray(decrypted_pixels.astype('uint8'))
+        decrypted_img.save(decrypted_path)
+        print(f"Decrypted image saved as {decrypted_path}")
+    else:
+        print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
